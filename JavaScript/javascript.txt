@@ -172,7 +172,7 @@ as they declare they will run
 </body>
 </html>
 *****************************************************************************
-call()
+			call()
 <!DOCTYPE html>
 <html>
 <body>
@@ -198,3 +198,88 @@ const person2 = {
 
 </body>
 </html>
+
+******************************
+call(), apply(), bind()-- access properties of any other objects
+***********************************************************************
+			MAP
+
+A Map holds key-value pairs where the keys can be any datatype.
+
+A Map remembers the original insertion order of the keys.
+
+A Map has a property that represents the size of the map.
+
+Method	Description
+new Map()	Creates a new Map object
+set()	Sets the value for a key in a Map
+get()	Gets the value for a key in a Map
+clear()	Removes all the elements from a Map
+delete()	Removes a Map element specified by a key
+has()	Returns true if a key exists in a Map
+forEach()	Invokes a callback for each key/value pair in a Map
+entries()	Returns an iterator object with the [key, value] pairs in a Map
+keys()	Returns an iterator object with the keys in a Map
+values()	Returns an iterator object of the values in a Map
+
+
+Property	Description
+size	Returns the number of Map elements
+
+*****************************************************************************************
+					Callback function
+A callback is a function passed as an argument to another function.
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+function multiplication(num){
+document.getElementById("demo").innerHTML = num*num;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+myCalculator(2,3,multiplication);
+
+
+************************************************************************************
+			Promises Object
+A Promise is a JavaScript object that links producing code and consuming code
+"Producing code" is code that can take some time
+
+"Consuming code" is code that must wait for the result
+
+let myPromise = new Promise(function(myResolve, myReject) {
+// "Producing Code" (May take some time)
+
+  myResolve(); // when successful
+  myReject();  // when error
+});
+
+// "Consuming Code" (Must wait for a fulfilled Promise)
+myPromise.then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+
+
+
+The Promise object supports two properties: state and result.
+state     Result
+Pending  undefined
+Fulfilled a result value
+Rejected an error object
+
+lamda/aarow function
+
+(a,b)=>{
+
+
+}
+
+	
+
+
