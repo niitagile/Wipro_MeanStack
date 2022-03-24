@@ -1,0 +1,200 @@
+create a prototype for ProductDetails.
+You require to store productid, productname, price, qty
+Display all information in tabular foramt in html page
+You require to display all information about product as well as total cost= price*qty
+
+Function
+Global and local scope of varaible
+function myFunction() {
+  let a = 4;
+  return a * a;
+}
+
+
+
+let a = 4;
+function myFunction() {
+  return a * a;
+}
+
+<html>
+
+<body>
+	<script>
+		// calling x after definition
+		var x = 5;
+		document.write(x, "\n");
+
+		// calling y after definition
+		let y = 10;
+		document.write(y, "\n");
+
+		// calling var z before definition will return undefined
+		document.write(z, "\n");
+		var z = 2;
+
+		// calling let a before definition will give error
+		document.write(a);
+		let a = 3;
+	</script>
+</body>
+
+</html>	
+
+<html>
+<body>
+<script>						
+function name(){
+var name="Anuj";
+
+{
+
+let firstname="Bonny";
+
+
+}
+
+document.write(name);
+document.write(firstname);//error
+
+}
+name();
+</script>
+</body>
+</html>
+
+*******************************
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Function Closures</h2>
+<p>Counting with a local variable.</p>
+
+<p id="demo"></p>
+
+<script>
+// Initiate counter
+let counter = 0;
+
+// Function to increment counter
+function add() {
+  let counter = 0; 
+  counter += 1;
+}
+
+// Call add() 3 times
+add();
+add();
+add();
+
+// The result is not 3 because you mix up the globaland local counter
+document.getElementById("demo").innerHTML = "The counter is: " + counter;
+</script>
+
+</body>
+</html>
+
+
+*****************
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">0</p>
+
+<script>
+document.getElementById("demo").innerHTML = add();
+function add() {
+  let counter = 0;
+  function plus() {
+	counter += 1;
+	}
+  plus();  
+  return counter; 
+}
+</script>
+
+</body>
+</html>
+
+***************************************************************************************
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>A closure is a function having access to the parent scope,
+     even after the parent function has closed.</h1>
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+
+<script>
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter;}
+})();
+
+function myFunction(){
+  document.getElementById("demo").innerHTML = add();
+}
+</script>
+
+</body>
+</html>
+****************************************************************************
+IIFE- Immediate Invoke function
+as they declare they will run
+(function () {
+    //write your js code here
+})();
+
+
+
+!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+(function () {
+    var userName = "Steve";
+    
+    function display(name)
+    {
+        alert("MyScript2.js: " + name);
+    }
+
+    display(userName);
+  })();
+</script>
+
+</body>
+</html>
+*****************************************************************************
+call()
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+const person1 = {
+  firstName:"Mohit",
+  lastName: "Sharma"
+}
+const person2 = {
+  firstName:"Kanika",
+  lastName: "Goyal"
+}
+
+</script>
+
+</body>
+</html>
