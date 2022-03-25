@@ -1,0 +1,164 @@
+
+
+
+Step 1) Download Node.js Installer for Windows
+Go to the site https://nodejs.org/en/download/ and download the necessary binary files.
+
+Step 2)
+Double click on the downloaded .msi file to start the installation.
+
+Step 3)
+Open terminal/command window and type node -v command to check whether the Node.js is installed on your local machine or not. 
+
+Step 4)Install npm
+
+npm install -g npm
+npm -v
+step 5) install angular
+npm install -g @angular/cli
+
+step 6)
+After the installation, check the Angular version using the ng --version command
+
+
+
+
+
+
+
+
+
+
+
+
+step 7)
+To create an initial application, navigate to the folder where you want to create an application, and execute the ng new <project name> command in the terminal/command window.
+D:\AngularApps> ng new FirstAngularApp
+
+step 8)
+To open this project in VS Code, navigate to the project folder in the terminal/command window and type code ..
+
+D:\AngularApps\FirstAngularApp\>code .
+
+step 9) Run project
+Open the terminal in VS Code from menu Terminal -> New Terminal, and type ng serve -o command and press enter,
+
+
+Structure of Angular Project
+app folder
+
+Contains "modules" and "components" for our Angular application.
+
+It basically has,
+
+app.component.css - Contains the CSS code for the component.
+app.component.html - HTML file pointing to the app component. It is a template for the angular application.
+app.component.spec.ts - Unit testing file associated with app component. It can be generated using "ng test" command.
+app.component.ts - Entire functional logic is written in this file. 
+app.module.ts - TypeScript file holds all dependencies. Here we will use "NgModule" and define the Bootstrap component when loading the application.
+assets folder
+
+Here we will keep resources such as images, styles, icons, etc.
+
+environments folder
+
+It contains the environment configuration constants that help while building the angular application. It has environment.ts and environment.prod.ts. These configurations are used in angular.json file. 
+
+favicon.io
+
+The icon appears in the browser tab of our application.
+
+index.html
+
+Basic HTML file.
+
+main.ts
+
+The starting point of our application. It bootstraps/starts the AppModule from the app.module.ts file.
+
+polyfills.ts
+
+This file is used to compile our TypeScript to specific JavaScript methods. Provides compatibility support for Browser versions.
+
+styles.css
+
+Global CSS file. 
+
+tests.ts
+
+It is the main test file. When we run the "ng test" command, this file is taken into consideration.
+
+.browserslistrc file
+
+Browser compatibility and versions are mentioned in this file. This configuration is pointed to in our package.json file.
+
+.editorconfig
+
+This file deals with consistency in code editors to organize some basics such as indentation and whitespaces. More like code formatting.
+
+angular.json
+
+This file defines the structure of our application. It includes settings associated with our application. Also, we can specify the environments on this file. For example, development, production, etc.
+
+karma.conf.js
+
+This is the configuration file for the Karma Test Runner. It is used in Unit Testing.
+
+package.json
+
+This is the npm configuration file. All the dependencies mentioned in this file. We can modify dependency versions as per our need on this file.
+
+package-lock.json
+
+Whenever we change something on the node_modules or package.json, this file will be generated. It is associated with npm.
+
+README.md
+
+This file is created by default. It contains our project description. It shows how to build and which Angular CLI version has been used.
+
+tsconfig.app.json
+
+This configuration file overrides the tsconfig.json file with relevant app-specific configurations.
+
+tsconfig.base.json
+
+This file has been introduced in Angular 10+. It has the same configuration as compared to tsconfig.json file.
+
+tsconfig.json
+
+TypeScript compiler configuration file. This is responsible for compiling TypeScript to JavaScript so that the browser will understand.
+
+tsconfig.spec.json
+
+This file overrides the tsconfig.json file with app-specific unit test configurations while running the "ng test" command.
+
+tslint.json
+
+tslint.json is a static analysis tool. This file keeps track of the TypeScript code for readability, maintainability, and functionality errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
