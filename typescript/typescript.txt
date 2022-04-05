@@ -1,0 +1,614 @@
+programming building-- typescript
+data
+variables
+- data types
+- size
+- format specifiers(access modifiers)
+- typecasting- conversion from 1 type to another type
+- initalization
+rules for identifiers
+Coding Blocks
+    Control statements- if
+	if(condition){
+		statements;
+	}
+	else
+		statements;
+, switch
+	switch(variable){
+	case value1:
+	case value3:
+			 statements;
+			break;
+	case value2: statements;
+			break;
+	default: statements;
+
+}
+
+, 			loops--
+
+for
+	for (initial_count_value; termination-condition; step) {
+   //statements 
+}
+
+for(; ;){}--> infinte
+
+while,
+
+while(condition){
+	statements
+}
+
+
+
+
+
+do.. while
+do{
+
+statements;
+}while(condition);
+
+
+	,for enhance loop
+forEach( ( ) => {}){ }
+let arr=['Anil','Manish','Ramesh'];
+let ans=[];
+arr.foreach(function(item){
+	ans.push(item)});
+
+
+class A {  
+    function() {  
+        var array = [1, 2, 3, 4];  
+        for (var v in array) // for acts as a foreach  
+        {  
+            alert(array[v]);  
+        }  
+    }  
+}  
+window.onload = () => {  
+    var call = new A();  
+    call.function();  
+}   
+
+
+    break, continue, return
+let products=[
+		{name:'phone',price:700},
+		{name:'tablet',price:900},
+		{name:'laptop',price:1200}
+	];
+
+for(var i=0;i<products.length;i++){
+	if(product[i].price==900)
+		break;
+}
+console.log(products[i]);
+
+
+	continue
+
+let products=[
+		{name:'phone',price:700},
+		{name:'tablet',price:900},
+		{name:'laptop',price:1200}
+	];
+
+for(var i=0;i<products.length;i++){
+	if(product[i].price==900)
+		continue;
+
+	console.log(products[i]);
+}
+
+
+
+
+    
+user defined functions
+- how to create functions
+- how to take input
+- how to return output
+- how to call functions
+- optional,default, rest parameter
+		
+
+function add(a: number, b: number):number{
+
+	return a+b;
+}
+let ans=add(10,12)
+
+
+function display():void{
+
+	console.log("hello");
+}
+
+
+display();
+
+
+
+let add: (a:number,y:number)=> number;
+
+add=function(a:number,y:number){return a+y;}
+
+	optional parameter
+function function_name(parameter1[:type], parameter2[:type], parameter3 ? [:type]) { } 
+
+class Calculate{
+    x:number;
+    y:number;
+    constructor(x?: number, y?: number){//? repesents those params are optional. if a param is ?, then all the right params also ?.
+        this.x = x;
+        this.y = y;
+    }
+    add(){
+        let sum = this.x + this.y;
+        console.log("Addition: "+ sum);
+    }
+    subtract(){
+        let sub = this.x - this.y;
+        console.log("Subtraction: "+ sub);
+    }
+}
+
+	default parameters
+function applyDiscount(price : number,discount: number=5.5):number{
+	return price-discount;
+}
+
+let ans=applydiscount(240);
+let ans=applydiscount(230,6);
+
+
+
+Rest Parameters
+--It is used to pass zero or more values to a function.
+--It must be an array type.
+
+function addition(...num:number[]): number{
+
+	let total =0;
+	num.forEach((val)=> total+=val);
+		
+}
+
+console.log(getTotal());
+console.log(getTotal(10,20));
+console.log(getTotal(10,20,30));
+
+
+predefined function
+- how to invoke predefined functions 
+packages
+- how to include predefine packages
+
+import { Class } from libName
+
+
+like a logical folder- which contains predefined classes and functions
+
+
+arrays
+- how to create arrays
+- how to read values and manipulate them
+- functions on arrays
+string
+- how to declare a string 
+- functions of string
+
+
+
+		module
+A module is a way to create a group of related variables, functions, classes, and interfaces, etc.
+
+It is a file with export of class, It consist some code
+
+One module features can be used in another file
+
+
+validators.ts
+An Interface is a structure which acts as a contract in our application
+export interface Validator{
+	isValid(s: String):boolean
+}
+
+
+EmailValidator.ts
+import {Validator} from './Validators';
+
+class EmailVvalidator implements Validator{
+
+	isValid(s: String):boolean{
+		return true;
+	}
+
+
+}
+
+***************************************************************************************
+class
+class Student {  
+    studCode: number;  
+    studName: string;  
+  
+    constructor(code: number, name: string) {  
+            this.studName = name;  
+            this.studCode = code;  
+    }  
+  
+    getGrade() : string {  
+        return "A+" ;  
+    }  
+}  
+
+let obj = new Student(1,"Mahesh")
+ans:string=obj.getGrade();
+
+
+	Access Modifiers
+set visibility of the properties and methods
+private : limit in class only
+protected: limit in class and its subclasses
+public: can be accessable anywhere
+
+readonly
+
+	getter/setters
+class Cal { 
+  private x:number;
+  private y:number;
+  constructor(x: number, y: number) {
+    this.x = x;// this indicates to current object
+    this.y = y;
+  }
+  set setX(value){
+    this.x = value;
+  }
+  get getX(value){
+    return this.x;
+  }
+  mul(){//user defined function
+    let res = x + y;
+    console.log(res);
+  }
+}
+let obj = new Cal(1,2);
+console.log(obj.getX());//output will be 1;
+
+******************************
+class Person {
+    private _age: number;
+    private _firstName: string;
+    private _lastName: string;
+ 
+    public get age() {
+        return this._age;
+    }
+    public set age(theAge: number) {
+        
+        this._age = theAge;
+    }
+    public getFullName(): string {
+        return this._firstName + this._lastName;
+    }
+}
+
+
+
+		read only
+
+
+class Employee {
+    readonly empCode: number;
+    empName: string;
+    
+    constructor(code: number, name: string)     {
+        this.empCode = code;
+        this.empName = name;
+    }
+}
+let emp = new Employee(10, "John");
+emp.empCode = 20; //Compiler Error
+emp.empName = 'Bill'; 
+
+
+
+
+
+
+	Inheritence
+
+Inheritance is the feature of reusability, the fields in one class can be
+used in another class by inheriting the parent class.
+i) use extends keyword
+ii) access modifiers - private, public, protected-->child class can use protected and public
+iii) variables/methods/gettersetters/constructor-->
+iv) how to call constructor of parent class
+
+class car{
+	Color:string;
+	constructor(color:string){
+		this.Color=color;
+	}
+}
+
+
+class Audi extends Car{
+	price: number;
+	constructor(color: string, price: number){
+		super(color);//calling parent class constructor. It must be first line in block
+		this.price=price;
+	}
+
+	display():void{
+		console.log(Color +" "+price);
+	}
+
+
+}
+  	
+single, hybrid , multilevel , hierarchy are different inhertances
+typescript doesn't support multiple inheritence
+
+
+
+
+Tomorrow's Topic
+
+	static methods & properties
+--A method which does not need a class instance to be called
+--can't be inherited
+--sharable
+
+static let a:number;
+
+class Employee {
+    private static headcount: number = 0;
+    constructor()
+       
+         
+        Employee.headcount++;
+    }
+    public static getHeadcount() {
+        return Employee.headcount;
+    }
+	display(){
+	console.log("Hello");
+	}
+}
+
+
+let obj1=new Employee();
+obj1.display();
+let obj2=new Employee();
+console.log(Employee.getHeadCount());
+
+
+Abstract class
+Abstraction is the process of hiding essentials and showing the general details.
+Abstract class can be created by using abstract key word and abstract methods
+can be implemented only in derived class.
+
+We cannot create an instance of abstract class
+
+abstract class className { .//// \}
+	
+abstract class Person { 
+ abstract find(): Person;
+}
+class Employee extends Person {
+ find(){
+   console.log("Implementing in child class");
+ }
+}
+let objec = new Person();
+objec.find();
+//output: Implementing in child class
+from rampatiganesh@gmail.com to Nidhi (Trainer) (privately):
+abstract class Person {
+    name: string;
+    
+    constructor(name: string) {
+        this.name = name;
+    }
+    display(): void{
+        console.log(this.name);
+    }
+    abstract find(string): Person;
+}
+class Employee extends Person { 
+    empCode: number;
+    
+    constructor(name: string, code: number) { 
+        super(name); // must call super()
+        this.empCode = code;
+    }
+    find(name:string): Person { 
+        // execute AJAX request to find an employee from a db
+        return new Employee(name, 1);
+    }
+}
+let emp: Person = new Employee("James", 100);//upcasting
+emp.display(); //James
+let emp2: Person = emp.find('Steve');
+
+
+		interface
+interface is purely abstraction
+Interfaces support multiple inheritances.
+interface interface_name { 
+}
+ 
+	interface as type
+interface Person{
+	firstname: string;
+	lastName: string;
+}
+
+function getFullName(obj:Person){
+	return firstname+" "+lastName;
+
+}
+
+let arr={ firstname='Anish', lastname='Munjal'};
+
+console.log(getFullName(arr);
+***************************************
+interface extends interface
+
+(interface Person {   
+   name:string  
+   age:number  
+}  
+interface Employee extends Person {   
+   gender:string  
+   empCode:number  
+}  
+let empObject = <Employee>{};   
+empObject.name = "Abhishek"  
+empObject.age = 25   
+empObject.gender = "Male"  
+empObject.empCode = 43  
+console.log("Name: "+empObject.name);  
+console.log("Employee Code: "+empObject.empCode);  
+
+*********************
+interface implements by class
+
+interface Runnable{
+
+run(): void //abstract methods
+}
+
+
+class Thread implements Runnable{
+	run():void{
+		console.log("abstarct method from interface");
+	}
+
+}
+
+let thread=new Thread();
+thread.run();
+
+
+
+			namespaces
+namespace used for logical grouping of functionalities
+
+namespace <name>{
+}
+
+
+namespace Mathametical{
+
+	export interface calculation;
+}
+
+
+
+	module
+module <modulename>{
+
+}
+	generics
+it is class and function templates
+It takes any type of data
+
+function addition(aar: any[]){
+
+}
+
+addition([2,3,4]);
+addition(["geet", "Mahesh"])
+
+If you declare it as any, it never forces us to change return type
+
+
+function addition<T>(aar: T[]){
+
+}
+
+
+
+addition<number>([4,5,7);
+addition<String>(["geet", "Mahesh"])
+
+function addition(num: T[], num1: T1[])
+{
+
+}
+
+
+addtion<number,string>(4,"Mahesh"); 
+
+decorators/annotations
+a special kind of declaration that can be applied to classes, methods, accessor, property,parameter
+
+@expression
+purpose- to provide some metadata information to server
+
+To enable experimental support for decorators, we must enable the experimentalDecorators compiler option either on the command line or in our tsconfig.json:
+
+{  
+    "compilerOptions": {  
+        "target": "ES5",  
+        "experimentalDecorators": true  
+    }  
+}
+
+types of Decorators
+	class -@sealed(no inheritence)
+	method- @log 
+	accessors- setters
+	property- variables
+	parameters
+
+
+
+  
+How to create project on NodeJs by using VS Code
+
+Introduction to angular
+
+
+
+Today's Topic
+All syntax of 
+Basic Concepts of Typescript
+OOPs Concept of Typescript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+npm install -g typescript
+
+
+
+
+
+
