@@ -1,0 +1,38 @@
+<div class="jumbotron" style="background-color: rgb(252, 249, 249);">
+  
+  <br>
+ 
+<form [formGroup]="createmem" (ngSubmit)="addmem()">
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label for="exampleFormControlInput1" style="color: white;">Enter The Name</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter The Name" formControlName="name">
+            </div>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+  <br>
+  <div class="form-group">
+      <label for="exampleFormControlTextarea1" style="color: white;">Enter The Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Enter Your Description" formControlName="desc"></textarea>
+    </div>
+    <div class="row">
+      <div class="col">
+          <button type="submit" class="btn btn-warning">Submit </button>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+</form>
+</div>
+
+
+<div class="jumbotron"  *ngIf="show">
+<h1>My name is {{name}}</h1>
+<h4>My job description is : {{desc}}</h4></div>
+
+<router-outlet></router-outlet>
